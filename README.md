@@ -1,0 +1,1 @@
+Built an AI-powered YouTube Video Summarizer using React and FastAPI that converts YouTube videos into concise summaries, timestamped notes, and quiz questions using Whisper for speech-to-text and Gemini API for NLP-based content generation.
