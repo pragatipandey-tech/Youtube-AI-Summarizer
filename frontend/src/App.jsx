@@ -1,3 +1,4 @@
+import Navbar from "./components/Navbar"
 function App() {
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center px-4">
