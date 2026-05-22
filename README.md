@@ -1,6 +1,6 @@
 # AI YouTube Summarizer
 
-An AI-powered web application that summarizes YouTube videos and generates:
+An AI-powered web application that summarizes YouTube videos and generates:-
 - Video summaries
 - Smart notes
 - Timestamps
