@@ -1,3 +1,4 @@
+import { motion } from "framer-motion"
 import Navbar from "./components/Navbar"
 import UrlInput from "./components/UrlInput"
 
@@ -6,7 +7,12 @@ function App() {
     <>
       <Navbar />
 
-      <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center px-4">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="min-h-screen bg-black text-white flex flex-col items-center justify-center px-4"
+      >
 
         <h1 className="text-5xl font-bold mb-4 text-center">
           AI YouTube Summarizer
@@ -32,7 +38,7 @@ function App() {
 
         </div>
 
-      </div>
+      </motion.div>
     </>
   )
 }
