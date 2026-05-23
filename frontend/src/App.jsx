@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
 import UrlInput from "./components/UrlInput"
 
@@ -39,6 +40,8 @@ function App() {
         </div>
 
       </motion.div>
+
+      <Footer />
     </>
   )
 }
