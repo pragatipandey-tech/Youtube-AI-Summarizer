@@ -7,6 +7,11 @@ function UrlInput() {
   
   const handleClick = () => {
 
+    if (!url.includes("youtube.com") && !url.includes("youtu.be")) {
+      alert("Please enter a valid YouTube URL")
+      return
+    }
+
     setLoading(true)
 
     setTimeout(() => {
