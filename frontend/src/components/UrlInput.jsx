@@ -3,7 +3,8 @@ import { useState } from "react"
 function UrlInput() {
 
   const [loading, setLoading] = useState(false)
-
+  const [url, setUrl] = useState("")
+  
   const handleClick = () => {
 
     setLoading(true)
@@ -19,6 +20,8 @@ function UrlInput() {
 
       <input
         type="text"
+        value={url}
+        onChange={(e) => setUrl(e.target.value)}
         placeholder="Paste YouTube URL..."
         className="flex-1 p-4 rounded-xl bg-zinc-900 border border-zinc-700 outline-none"
       />
