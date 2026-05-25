@@ -3,6 +3,7 @@ import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
 import UrlInput from "./components/UrlInput"
 import SummaryCard from "./components/SummaryCard"
+import NotesSection from "./components/NotesSection"
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
         <UrlInput />
 
         <SummaryCard />
+
+        <NotesSection />
 
       </motion.div>
 
