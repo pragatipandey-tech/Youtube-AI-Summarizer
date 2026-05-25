@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar"
 import UrlInput from "./components/UrlInput"
 import SummaryCard from "./components/SummaryCard"
 import NotesSection from "./components/NotesSection"
+import TimestampList from "./components/TimestampList"
 
 function App() {
   return (
@@ -31,6 +32,8 @@ function App() {
         <SummaryCard />
 
         <NotesSection />
+
+        <TimestampList />
 
       </motion.div>
 
