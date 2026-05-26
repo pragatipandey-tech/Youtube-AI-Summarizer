@@ -6,8 +6,12 @@ import SummaryCard from "./components/SummaryCard"
 import NotesSection from "./components/NotesSection"
 import TimestampList from "./components/TimestampList"
 import QuizCard from "./components/QuizCard"
+import { useState } from "react"
 
 function App() {
+
+  const [showResults, setShowResults] = useState(false)
+
   return (
     <>
       <Navbar />
@@ -30,13 +34,24 @@ function App() {
 
         <UrlInput />
 
-        <SummaryCard />
+        <button
+          onClick={() => setShowResults(true)}
+          className="mt-6 bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-xl font-semibold"
+        >
+          Show AI Results
+        </button>
 
-        <NotesSection />
+        {showResults && (
+          <>
+            <SummaryCard />
 
-        <TimestampList />
+            <NotesSection />
 
-        <QuizCard />
+            <TimestampList />
+
+            <QuizCard />
+          </>
+        )}
 
       </motion.div>
 
