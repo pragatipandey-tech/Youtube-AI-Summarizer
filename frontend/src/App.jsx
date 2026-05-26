@@ -16,7 +16,7 @@ function App() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="min-h-screen bg-black text-white flex flex-col items-center px-4 py-10"
+        className="min-h-screen bg-gradient-to-br from-black via-zinc-900 to-black text-white flex flex-col items-center px-4 py-10"
       >
 
         <h1 className="text-5xl font-bold mb-4 text-center">
