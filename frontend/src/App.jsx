@@ -7,10 +7,13 @@ import NotesSection from "./components/NotesSection"
 import TimestampList from "./components/TimestampList"
 import QuizCard from "./components/QuizCard"
 import { useState } from "react"
+import Loader from "./components/Loader"
 
 function App() {
 
   const [showResults, setShowResults] = useState(false)
+
+  const [loading, setLoading] = useState(false)
 
   return (
     <>
@@ -35,11 +38,22 @@ function App() {
         <UrlInput />
 
         <button
-          onClick={() => setShowResults(true)}
+          onClick={() => {
+
+            setLoading(true)
+
+            setTimeout(() => {
+              setLoading(false)
+              setShowResults(true)
+            }, 2500)
+
+          }}
           className="mt-6 bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-xl font-semibold"
         >
           Show AI Results
         </button>
+
+        {loading && <Loader />}
 
         {showResults && (
           <>
