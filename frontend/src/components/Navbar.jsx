@@ -1,6 +1,7 @@
 function Navbar() {
   return (
-    <nav className="w-full flex justify-between items-center px-8 py-5 border-b border-zinc-800">
+
+    <nav className="w-full flex flex-col md:flex-row justify-between items-center px-8 py-5 border-b border-zinc-800 gap-4">
 
       <h1 className="text-2xl font-bold text-white">
         VidMind AI
@@ -9,12 +10,13 @@ function Navbar() {
       <a
         href="https://github.com/pragatipandey-tech/Youtube-AI-Summarizer"
         target="_blank"
-        className="bg-zinc-900 hover:bg-zinc-800 px-4 py-2 rounded-lg text-sm"
+        className="bg-zinc-900 hover:bg-zinc-800 px-4 py-2 rounded-lg text-sm transition-all duration-300"
       >
         GitHub
       </a>
 
     </nav>
+
   )
 }
 
