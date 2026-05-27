@@ -55,6 +55,12 @@ function App() {
 
         {loading && <Loader />}
 
+        {!showResults && !loading && (
+         <p className="mt-10 text-gray-500 text-center">
+           Paste a YouTube link and generate AI insights instantly.
+        </p>
+        )}
+
         {showResults && (
           <>
             <SummaryCard />
