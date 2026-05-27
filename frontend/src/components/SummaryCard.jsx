@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { FileText } from "lucide-react"
 
 function SummaryCard() {
 
@@ -23,13 +24,19 @@ function SummaryCard() {
 
       <div className="flex justify-between items-center mb-4">
 
-        <h2 className="text-2xl font-bold">
-          Video Summary
-        </h2>
+        <div className="flex items-center gap-2">
+
+          <FileText size={28} />
+
+          <h2 className="text-2xl font-bold">
+            Video Summary
+          </h2>
+
+        </div>
 
         <button
           onClick={handleCopy}
-          className="bg-zinc-800 hover:bg-zinc-700 px-4 py-2 rounded-lg text-sm"
+          className="bg-zinc-800 hover:bg-zinc-700 px-4 py-2 rounded-lg text-sm transition-all duration-300"
         >
           {copied ? "Copied!" : "Copy"}
         </button>

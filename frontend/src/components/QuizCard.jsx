@@ -1,10 +1,18 @@
+import { CircleHelp } from "lucide-react"
+
 function QuizCard() {
   return (
     <div className="mt-10 w-full max-w-3xl bg-zinc-900 p-6 rounded-2xl border border-zinc-800 hover:scale-[1.01] transition-all duration-300">
 
-      <h2 className="text-2xl font-bold mb-4">
-        Quiz Questions
-      </h2>
+      <div className="flex items-center gap-2 mb-4">
+
+        <CircleHelp size={28} />
+
+        <h2 className="text-2xl font-bold">
+          Quiz Questions
+        </h2>
+
+      </div>
 
       <div className="space-y-4 text-gray-300">
 
