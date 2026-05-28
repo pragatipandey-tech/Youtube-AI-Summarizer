@@ -16,6 +16,10 @@ function App() {
 
   const [loading, setLoading] = useState(false)
 
+  const handleReset = () => {
+  setShowResults(false)
+  }
+
   return (
     <>
       <Navbar />
@@ -52,6 +56,13 @@ function App() {
           className="mt-6 bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-xl font-semibold"
         >
           Show AI Results
+        </button>
+
+        <button
+           onClick={handleReset}
+           className="mt-3 bg-zinc-800 hover:bg-zinc-700 px-6 py-3 rounded-xl font-semibold"
+          >
+          Clear Results
         </button>
 
         {loading && <Loader />}
