@@ -8,6 +8,7 @@ import TimestampList from "./components/TimestampList"
 import QuizCard from "./components/QuizCard"
 import { useState } from "react"
 import Loader from "./components/Loader"
+import StatsCard from "./components/StatsCard"
 
 function App() {
 
@@ -62,7 +63,14 @@ function App() {
         )}
 
         {showResults && (
-          <>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="w-full flex flex-col items-center"
+          >
+            <StatsCard />
+
             <SummaryCard />
 
             <NotesSection />
@@ -70,7 +78,7 @@ function App() {
             <TimestampList />
 
             <QuizCard />
-          </>
+          </motion.div>
         )}
 
       </motion.div>
