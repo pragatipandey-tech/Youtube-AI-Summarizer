@@ -31,7 +31,7 @@ function UrlInput() {
           value={url}
           onChange={(e) => setUrl(e.target.value)}
           placeholder="Paste YouTube URL..."
-          className="flex-1 p-4 rounded-xl bg-zinc-900 border border-zinc-700 outline-none"
+          className="flex-1 p-4 rounded-xl bg-zinc-900 border border-zinc-700 outline-none focus:ring-2 focus:ring-red-500 transition-all duration-300"
         />
 
         <button
