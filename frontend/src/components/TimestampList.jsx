@@ -2,7 +2,7 @@ import { Clock3 } from "lucide-react"
 
 function TimestampList() {
   return (
-    <div className="mt-10 w-full max-w-3xl bg-zinc-900 p-6 rounded-2xl border border-zinc-800 hover:scale-[1.01] transition-all duration-300">
+    <div className="mt-10 w-full max-w-3xl bg-white/5 backdrop-blur-lg p-6 rounded-2xl border border-zinc-800 hover:scale-[1.01] transition-all duration-300">
 
       <div className="flex items-center gap-2 mb-4">
 
