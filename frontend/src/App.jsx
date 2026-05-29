@@ -31,7 +31,7 @@ function App() {
         className="min-h-screen bg-gradient-to-br from-black via-zinc-900 to-black text-white flex flex-col items-center px-4 py-10"
       >
 
-        <h1 className="text-5xl font-bold mb-4 text-center">
+        <h1 className="text-5xl md:text-7xl font-extrabold mb-4 text-center bg-gradient-to-r from-red-500 via-pink-500 to-purple-500 bg-clip-text text-transparent">
           AI YouTube Summarizer
         </h1>
 
