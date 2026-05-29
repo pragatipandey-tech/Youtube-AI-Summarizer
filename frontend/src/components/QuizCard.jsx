@@ -1,8 +1,16 @@
 import { CircleHelp } from "lucide-react"
+import { motion } from "framer-motion"
 
 function QuizCard() {
   return (
-    <div className="mt-10 w-full max-w-3xl bg-white/5 backdrop-blur-lg p-6 rounded-2xl border border-zinc-800 hover:scale-[1.01] transition-all duration-300">
+
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+      className="mt-10 w-full max-w-3xl bg-white/5 backdrop-blur-lg p-6 rounded-2xl border border-zinc-800 hover:scale-[1.01] transition-all duration-300"
+    >
 
       <div className="flex items-center gap-2 mb-4">
 
@@ -22,7 +30,7 @@ function QuizCard() {
 
       </div>
 
-    </div>
+    </motion.div>
   )
 }
 

@@ -1,7 +1,15 @@
+import { motion } from "framer-motion"
+
 function StatsCard() {
   return (
 
-    <div className="mt-10 w-full max-w-3xl grid grid-cols-1 md:grid-cols-3 gap-4">
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+      className="mt-10 w-full max-w-3xl grid grid-cols-1 md:grid-cols-3 gap-4"
+    >
 
       <div className="bg-white/5 backdrop-blur-lg p-6 rounded-2xl border border-zinc-800 text-center hover:scale-[1.02] transition-all duration-300">
 
@@ -39,7 +47,7 @@ function StatsCard() {
 
       </div>
 
-    </div>
+    </motion.div>
 
   )
 }
