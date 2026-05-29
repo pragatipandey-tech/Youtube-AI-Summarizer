@@ -28,6 +28,12 @@ function NotesSection() {
         Download Notes
       </button>
 
+      <button
+        className="mb-4 bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm transition-all duration-300"
+      >
+      Download Notes
+      </button>
+
       <ul className="list-disc pl-6 text-gray-300 space-y-2">
         <li>Artificial Intelligence overview</li>
         <li>Machine Learning basics</li>
