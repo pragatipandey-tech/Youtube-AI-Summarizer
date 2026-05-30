@@ -19,13 +19,21 @@ def home():
 @app.get("/transcript")
 def get_transcript(video_id: str):
 
-    api = YouTubeTranscriptApi()
+    try:
 
-    transcript = api.fetch(video_id)
+        api = YouTubeTranscriptApi()
 
-    full_text = " ".join([t.text for t in transcript])
+        transcript = api.fetch(video_id)
 
-    return {
-        "video_id": video_id,
-        "transcript": full_text[:3000]
-    }
+        full_text = " ".join([t.text for t in transcript])
+
+        return {
+            "video_id": video_id,
+            "transcript": full_text[:3000]
+        }
+
+    except Exception as e:
+
+        return {
+            "error": str(e)
+        }
