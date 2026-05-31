@@ -1,24 +1,36 @@
 import { useState } from "react"
+import { fetchTranscript } from "../services/api"
 
 function UrlInput() {
 
   const [loading, setLoading] = useState(false)
   const [url, setUrl] = useState("")
 
-  const handleClick = () => {
+  const handleClick = async () => {
 
-    if (!url.includes("youtube.com") && !url.includes("youtu.be")) {
-      alert("Please enter a valid YouTube URL")
-      return
-    }
+  if (!url.includes("youtube.com") && !url.includes("youtu.be")) {
+    alert("Please enter a valid YouTube URL")
+    return
+  }
 
-    setLoading(true)
+  setLoading(true)
 
-    setTimeout(() => {
-      setLoading(false)
-    }, 3000)
+  try {
+
+    const videoId = url.split("v=")[1]
+
+    const data = await fetchTranscript(videoId)
+
+    console.log(data)
+
+  } catch (error) {
+
+    console.log(error)
 
   }
+
+  setLoading(false)
+}
 
   return (
 
