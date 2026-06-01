@@ -19,23 +19,33 @@ Built using:
 * Modern responsive UI
 * Animated dashboard
 * Glassmorphism design
-* Loading states
+* Gradient hero section
+* Framer Motion animations
+* Smooth auto-scroll behavior
+* Dynamic transcript rendering
+* Loading animations
+* Progress loading bar
 * URL validation
+* Copy transcript functionality
+* Transcript statistics
+* Responsive navbar & footer
 * Smart notes section
 * Quiz questions section
 * Timestamp section
 * Animated statistics cards
-* Copy summary functionality
+
+---
 
 ## Backend
 
 * FastAPI backend server
 * REST API architecture
 * YouTube transcript extraction
-* JSON API responses
+* Dynamic JSON API responses
 * Error handling
 * Swagger API documentation
 * CORS enabled backend
+* Frontend-backend integration
 
 ---
 
@@ -47,9 +57,23 @@ Youtube-AI-Summarizer/
 ├── frontend/
 │   ├── src/
 │   │   ├── components/
-│   │   ├── pages/
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   ├── Loader.jsx
+│   │   │   ├── UrlInput.jsx
+│   │   │   ├── SummaryCard.jsx
+│   │   │   ├── NotesSection.jsx
+│   │   │   ├── TimestampList.jsx
+│   │   │   ├── QuizCard.jsx
+│   │   │   └── StatsCard.jsx
+│   │   │
 │   │   ├── services/
-│   │   └── assets/
+│   │   │   └── api.js
+│   │   │
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   │
+│   └── package.json
 │
 ├── backend/
 │   ├── main.py
@@ -116,6 +140,38 @@ http://127.0.0.1:8000
 
 ---
 
+# 🔄 Running Full Stack Together
+
+## Terminal 1 — Frontend
+
+```bash
+cd frontend
+npm run dev
+```
+
+Runs on:
+
+```bash
+http://localhost:5173
+```
+
+---
+
+## Terminal 2 — Backend
+
+```bash
+cd backend
+py -m uvicorn main:app --reload
+```
+
+Runs on:
+
+```bash
+http://127.0.0.1:8000
+```
+
+---
+
 # 📡 API Endpoints
 
 ## Home Route
@@ -172,12 +228,30 @@ http://127.0.0.1:8000/docs
 # 🎨 UI Highlights
 
 * Framer Motion animations
+* Gradient animated hero section
 * Responsive navbar
 * Animated footer
-* Glassmorphism cards
-* Gradient hero section
-* Scroll reveal animations
+* Glassmorphism transcript cards
+* Auto-scroll animations
+* Dynamic transcript rendering
 * AI-style loading states
+* Transcript statistics section
+* Responsive dashboard layout
+* Hover animations
+* Copy transcript button
+
+---
+
+# 🧠 Current Functionalities
+
+✅ Paste YouTube URL
+✅ Extract video transcript
+✅ Display transcript dynamically
+✅ Show transcript statistics
+✅ Copy transcript instantly
+✅ Smooth loading animations
+✅ Real-time frontend-backend communication
+✅ Responsive full-stack dashboard
 
 ---
 
@@ -188,7 +262,8 @@ http://127.0.0.1:8000/docs
 * AI-generated notes
 * AI-generated quiz questions
 * Dynamic timestamps
-* Authentication
+* YouTube thumbnail preview
+* Authentication system
 * Database integration
 * Export notes as PDF
 * Deployment on Vercel & Render
@@ -205,6 +280,8 @@ http://127.0.0.1:8000/docs
 * Framer Motion
 * Lucide Icons
 
+---
+
 ## Backend
 
 * Python
@@ -219,7 +296,11 @@ http://127.0.0.1:8000/docs
 ✅ Frontend UI completed
 ✅ Backend server completed
 ✅ Transcript extraction working
+✅ Frontend-backend integration completed
+✅ Dynamic transcript rendering completed
 ✅ API documentation working
+✅ Loading states implemented
+✅ Responsive animations completed
 ✅ Full-stack architecture established
 
 ---
@@ -229,4 +310,6 @@ http://127.0.0.1:8000/docs
 Created by Pragati Pandey
 
 GitHub Repository:
+
 https://github.com/pragatipandey-tech/Youtube-AI-Summarizer
+
