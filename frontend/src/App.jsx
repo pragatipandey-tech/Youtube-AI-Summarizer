@@ -114,10 +114,21 @@ function App() {
                 {transcript.slice(0, 500)}...
               </p>
 
-              <p className="text-gray-500 text-sm mt-4">
-                Characters: {transcript.length}
-              </p>
+              <div className="mt-4 flex flex-wrap gap-4 text-sm text-gray-400">
 
+                <p>
+                  Characters: {transcript.length}
+               </p>
+
+               <p>
+                  Words: {transcript.split(" ").length}
+               </p>
+
+               <p>
+                 Preview Length: 500 chars
+               </p>
+
+              </div>
             </motion.div>
 
             <SummaryCard />
