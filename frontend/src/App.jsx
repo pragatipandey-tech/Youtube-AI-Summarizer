@@ -58,10 +58,11 @@ function App() {
         </p>
 
         <UrlInput
-          setTranscript={setTranscript}
-          setLoading={setLoading}
-          setShowResults={setShowResults}
-        />
+         setTranscript={setTranscript}
+         setLoading={setLoading}
+         setShowResults={setShowResults}
+         loading={loading}
+       />
 
         <button
           onClick={handleReset}

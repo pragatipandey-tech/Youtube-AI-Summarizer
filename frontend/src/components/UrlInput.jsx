@@ -1,36 +1,37 @@
 import { useState } from "react"
 import { fetchTranscript } from "../services/api"
 
-function UrlInput() {
+function UrlInput({ setTranscript, setLoading, setShowResults, loading }) {
 
-  const [loading, setLoading] = useState(false)
   const [url, setUrl] = useState("")
 
   const handleClick = async () => {
 
-  if (!url.includes("youtube.com") && !url.includes("youtu.be")) {
-    alert("Please enter a valid YouTube URL")
-    return
+    if (!url.includes("youtube.com") && !url.includes("youtu.be")) {
+      alert("Please enter a valid YouTube URL")
+      return
+    }
+
+    setLoading(true)
+
+    try {
+
+      const videoId = url.split("v=")[1]
+
+      const data = await fetchTranscript(videoId)
+
+      setTranscript(data.transcript)
+
+      setShowResults(true)
+
+    } catch (error) {
+
+      console.log(error)
+
+    }
+
+    setLoading(false)
   }
-
-  setLoading(true)
-
-  try {
-
-    const videoId = url.split("v=")[1]
-
-    const data = await fetchTranscript(videoId)
-
-    console.log(data)
-
-  } catch (error) {
-
-    console.log(error)
-
-  }
-
-  setLoading(false)
-}
 
   return (
 
@@ -48,12 +49,22 @@ function UrlInput() {
 
         <button
           onClick={handleClick}
-          className="bg-red-600 hover:bg-red-700 px-6 rounded-xl font-semibold"
+          className="bg-red-600 hover:bg-red-700 px-6 rounded-xl font-semibold transition-all duration-300"
         >
-          {loading ? "Processing..." : "Summarize"}
+          {loading ? "Fetching Transcript..." : "Summarize"}
         </button>
 
       </div>
+
+      {loading && (
+
+        <div className="mt-4 w-full bg-zinc-800 rounded-full h-2 overflow-hidden">
+
+          <div className="bg-red-500 h-2 animate-pulse w-full"></div>
+
+        </div>
+
+      )}
 
       <p className="text-gray-500 text-sm mt-2">
         Characters: {url.length}
