@@ -88,7 +88,12 @@ function App() {
 
             <StatsCard />
 
-            <div className="mt-10 w-full max-w-3xl bg-zinc-900 p-6 rounded-2xl border border-zinc-800">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+             className="mt-10 w-full max-w-3xl bg-white/5 backdrop-blur-lg p-6 rounded-2xl border border-zinc-800 hover:scale-[1.01] transition-all duration-300"
+             >
 
               <div className="flex justify-between items-center mb-4">
 
@@ -113,7 +118,7 @@ function App() {
                 Characters: {transcript.length}
               </p>
 
-            </div>
+            </motion.div>
 
             <SummaryCard />
 
