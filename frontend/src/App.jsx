@@ -6,10 +6,10 @@ import SummaryCard from "./components/SummaryCard"
 import NotesSection from "./components/NotesSection"
 import TimestampList from "./components/TimestampList"
 import QuizCard from "./components/QuizCard"
-import { useState } from "react"
 import Loader from "./components/Loader"
 import StatsCard from "./components/StatsCard"
 
+import { useState, useEffect } from "react"
 
 function App() {
 
@@ -17,9 +17,25 @@ function App() {
 
   const [loading, setLoading] = useState(false)
 
+  const [transcript, setTranscript] = useState("")
+
   const handleReset = () => {
-  setShowResults(false)
+    setShowResults(false)
+    setTranscript("")
   }
+
+  useEffect(() => {
+
+    if (transcript) {
+
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth"
+      })
+
+    }
+
+  }, [transcript])
 
   return (
     <>
@@ -41,37 +57,25 @@ function App() {
           notes, timestamps and quiz questions instantly.
         </p>
 
-        <UrlInput />
+        <UrlInput
+          setTranscript={setTranscript}
+          setLoading={setLoading}
+          setShowResults={setShowResults}
+        />
 
         <button
-          onClick={() => {
-
-            setLoading(true)
-
-            setTimeout(() => {
-              setLoading(false)
-              setShowResults(true)
-            }, 2500)
-
-          }}
-          className="mt-6 bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-xl font-semibold"
+          onClick={handleReset}
+          className="mt-3 bg-zinc-800 hover:bg-zinc-700 px-6 py-3 rounded-xl font-semibold"
         >
-          Show AI Results
-        </button>
-
-        <button
-           onClick={handleReset}
-           className="mt-3 bg-zinc-800 hover:bg-zinc-700 px-6 py-3 rounded-xl font-semibold"
-          >
           Clear Results
         </button>
 
         {loading && <Loader />}
 
         {!showResults && !loading && (
-         <p className="mt-10 text-gray-500 text-center">
-           Paste a YouTube link and generate AI insights instantly.
-        </p>
+          <p className="mt-10 text-gray-500 text-center">
+            Paste a YouTube link and generate AI insights instantly.
+          </p>
         )}
 
         {showResults && (
@@ -81,7 +85,35 @@ function App() {
             transition={{ duration: 0.6 }}
             className="w-full flex flex-col items-center"
           >
+
             <StatsCard />
+
+            <div className="mt-10 w-full max-w-3xl bg-zinc-900 p-6 rounded-2xl border border-zinc-800">
+
+              <div className="flex justify-between items-center mb-4">
+
+                <h2 className="text-2xl font-bold">
+                  AI Transcript Summary
+                </h2>
+
+                <button
+                  onClick={() => navigator.clipboard.writeText(transcript)}
+                  className="bg-zinc-800 hover:bg-zinc-700 px-4 py-2 rounded-lg text-sm"
+                >
+                  Copy Transcript
+                </button>
+
+              </div>
+
+              <p className="text-gray-300 leading-7">
+                {transcript.slice(0, 500)}...
+              </p>
+
+              <p className="text-gray-500 text-sm mt-4">
+                Characters: {transcript.length}
+              </p>
+
+            </div>
 
             <SummaryCard />
 
@@ -90,6 +122,7 @@ function App() {
             <TimestampList />
 
             <QuizCard />
+
           </motion.div>
         )}
 
