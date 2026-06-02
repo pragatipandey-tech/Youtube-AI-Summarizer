@@ -1,6 +1,10 @@
 from fastapi import FastAPI
 from youtube_transcript_api import YouTubeTranscriptApi
-from utils import generate_summary, generate_notes
+from utils import (
+    generate_summary,
+    generate_notes,
+    generate_quiz
+)
 
 app = FastAPI()
 
@@ -27,15 +31,15 @@ def get_transcript(video_id: str):
         )
 
         return {
-            "video_id": video_id,
-            "transcript": transcript,
-            "summary": generate_summary(transcript),
-            "notes": generate_notes(transcript),
-            "characters": len(transcript),
-            "words": len(transcript.split()),
-            "preview": transcript[:300]
+         "video_id": video_id,
+         "transcript": transcript,
+         "summary": generate_summary(transcript),
+         "notes": generate_notes(transcript),
+         "quiz": generate_quiz(transcript),
+         "characters": len(transcript),
+         "words": len(transcript.split()),
+         "preview": transcript[:300]
         }
-
     except Exception as e:
 
         return {
