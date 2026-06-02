@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from youtube_transcript_api import YouTubeTranscriptApi
+from utils import generate_summary
 
 app = FastAPI()
 
@@ -28,6 +29,9 @@ def get_transcript(video_id: str):
         return {
             "video_id": video_id,
             "transcript": transcript,
+
+            "summary": generate_summary(transcript),
+
             "characters": len(transcript),
             "words": len(transcript.split()),
             "preview": transcript[:300]
