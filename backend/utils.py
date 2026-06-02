@@ -1,7 +1,14 @@
-def generate_summary(text):
+def generate_notes(text):
 
     sentences = text.split(".")
 
-    summary = ".".join(sentences[:3])
+    notes = []
 
-    return summary
+    for sentence in sentences[:5]:
+
+        cleaned = sentence.strip()
+
+        if cleaned:
+            notes.append(cleaned)
+
+    return notes
