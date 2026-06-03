@@ -63,11 +63,15 @@ function App() {
         </p>
 
         <UrlInput
-         setTranscript={setTranscript}
-         setLoading={setLoading}
-         setShowResults={setShowResults}
-         loading={loading}
-       />
+          setTranscript={setTranscript}
+          setSummary={setSummary}
+          setNotes={setNotes}
+          setQuiz={setQuiz}
+          setStats={setStats}
+          setLoading={setLoading}
+          setShowResults={setShowResults}
+          loading={loading}
+        />
 
         <button
           onClick={handleReset}
