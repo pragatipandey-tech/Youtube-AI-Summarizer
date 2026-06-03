@@ -19,6 +19,11 @@ function App() {
 
   const [transcript, setTranscript] = useState("")
 
+  const [summary, setSummary] = useState("")
+  const [notes, setNotes] = useState([])
+  const [quiz, setQuiz] = useState([])
+  const [stats, setStats] = useState({})
+
   const handleReset = () => {
     setShowResults(false)
     setTranscript("")
