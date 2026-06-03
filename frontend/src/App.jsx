@@ -143,11 +143,11 @@ function App() {
 
             <SummaryCard summary={summary} />
 
-            <NotesSection />
+            <NotesSection notes={notes} />
 
             <TimestampList />
 
-            <QuizCard />
+            <QuizCard quiz={quiz} />
 
           </motion.div>
         )}

@@ -1,7 +1,7 @@
 import { CircleHelp } from "lucide-react"
 import { motion } from "framer-motion"
 
-function QuizCard() {
+function QuizCard({ quiz }) {
   return (
 
     <motion.div
@@ -24,9 +24,13 @@ function QuizCard() {
 
       <div className="space-y-4 text-gray-300">
 
-        <p>1. What is Artificial Intelligence?</p>
-        <p>2. Difference between ML and DL?</p>
-        <p>3. Name one real-world AI application.</p>
+        {
+          quiz.map((question, index) => (
+            <p key={index}>
+              {index + 1}. {question}
+            </p>
+          ))
+        }
 
       </div>
 

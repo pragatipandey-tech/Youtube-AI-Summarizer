@@ -1,7 +1,7 @@
 import { NotebookPen } from "lucide-react"
 import { motion } from "framer-motion"
 
-function NotesSection() {
+function NotesSection({ notes }) {
   return (
 
     <motion.div
@@ -22,23 +22,14 @@ function NotesSection() {
 
       </div>
 
-      <button
-        className="mb-4 bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm transition-all duration-300"
-      >
-        Download Notes
-      </button>
-
-      <button
-        className="mb-4 bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm transition-all duration-300"
-      >
-      Download Notes
-      </button>
-
       <ul className="list-disc pl-6 text-gray-300 space-y-2">
-        <li>Artificial Intelligence overview</li>
-        <li>Machine Learning basics</li>
-        <li>Deep Learning concepts</li>
-        <li>Real-world AI applications</li>
+
+        {
+          notes.map((note, index) => (
+            <li key={index}>{note}</li>
+          ))
+        }
+
       </ul>
 
     </motion.div>
