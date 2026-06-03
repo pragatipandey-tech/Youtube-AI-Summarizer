@@ -141,7 +141,7 @@ function App() {
               </div>
             </motion.div>
 
-            <SummaryCard />
+            <SummaryCard summary={summary} />
 
             <NotesSection />
 

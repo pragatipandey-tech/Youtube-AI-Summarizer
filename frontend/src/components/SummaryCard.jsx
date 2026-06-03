@@ -2,16 +2,13 @@ import { useState } from "react"
 import { FileText } from "lucide-react"
 import { motion } from "framer-motion"
 
-function SummaryCard() {
+function SummaryCard({ summary }) {
 
   const [copied, setCopied] = useState(false)
 
-  const summaryText =
-    "This video explains the fundamentals of Artificial Intelligence, Machine Learning, and Deep Learning along with real-world applications."
-
   const handleCopy = async () => {
 
-    await navigator.clipboard.writeText(summaryText)
+    await navigator.clipboard.writeText(summary)
 
     setCopied(true)
 
@@ -52,7 +49,7 @@ function SummaryCard() {
       </div>
 
       <p className="text-gray-300 leading-7">
-        {summaryText}
+        {summary}
       </p>
 
     </motion.div>
