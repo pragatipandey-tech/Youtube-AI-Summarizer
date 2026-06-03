@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { fetchTranscript } from "../services/api"
 
-function UrlInput({ setTranscript, setLoading, setShowResults, loading }) {
+function UrlInput({setTranscript,setSummary,setNotes,setQuiz,setStats,setLoading,setShowResults,loading}) {
 
   const [url, setUrl] = useState("")
 
@@ -21,6 +21,17 @@ function UrlInput({ setTranscript, setLoading, setShowResults, loading }) {
       const data = await fetchTranscript(videoId)
 
       setTranscript(data.transcript)
+
+      setSummary(data.summary)
+
+      setNotes(data.notes)
+
+      setQuiz(data.quiz)
+
+      setStats({
+        words: data.words,
+        characters: data.characters
+     })
 
       setShowResults(true)
 
