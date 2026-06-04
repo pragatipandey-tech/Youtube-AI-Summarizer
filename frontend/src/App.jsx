@@ -19,14 +19,28 @@ function App() {
 
   const [transcript, setTranscript] = useState("")
 
+  const [thumbnail, setThumbnail] = useState("")
+
   const [summary, setSummary] = useState("")
   const [notes, setNotes] = useState([])
   const [quiz, setQuiz] = useState([])
   const [stats, setStats] = useState({})
 
   const handleReset = () => {
-    setShowResults(false)
-    setTranscript("")
+
+  setShowResults(false)
+
+  setTranscript("")
+
+  setSummary("")
+
+  setNotes([])
+
+  setQuiz([])
+
+  setStats({})
+
+  setThumbnail("")
   }
 
   useEffect(() => {
@@ -70,6 +84,7 @@ function App() {
           setStats={setStats}
           setLoading={setLoading}
           setShowResults={setShowResults}
+          setThumbnail={setThumbnail}
           loading={loading}
         />
 
@@ -95,8 +110,13 @@ function App() {
             transition={{ duration: 0.6 }}
             className="w-full flex flex-col items-center"
           >
+            <img
+              src={thumbnail}
+              alt="YouTube Thumbnail"
+              className="mt-10 w-full max-w-3xl rounded-2xl border border-zinc-800"
+           />
 
-            <StatsCard />
+            <StatsCard stats={stats} />
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
