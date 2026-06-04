@@ -43,6 +43,8 @@ function App() {
   setStats({})
 
   setThumbnail("")
+
+  setError("")
   }
 
   useEffect(() => {
