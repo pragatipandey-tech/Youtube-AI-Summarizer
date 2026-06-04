@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 
-function StatsCard() {
+function StatsCard({ stats }) {
   return (
 
     <motion.div
@@ -14,7 +14,7 @@ function StatsCard() {
       <div className="bg-white/5 backdrop-blur-lg p-6 rounded-2xl border border-zinc-800 text-center hover:scale-[1.02] transition-all duration-300">
 
         <h2 className="text-3xl font-bold text-red-500">
-          12m
+          {stats.words}
         </h2>
 
         <p className="text-gray-400 mt-2">
@@ -26,7 +26,7 @@ function StatsCard() {
       <div className="bg-white/5 backdrop-blur-lg p-6 rounded-2xl border border-zinc-800 text-center hover:scale-[1.02] transition-all duration-300">
 
         <h2 className="text-3xl font-bold text-blue-500">
-          94%
+          {stats.characters}
         </h2>
 
         <p className="text-gray-400 mt-2">
@@ -38,7 +38,7 @@ function StatsCard() {
       <div className="bg-white/5 backdrop-blur-lg p-6 rounded-2xl border border-zinc-800 text-center hover:scale-[1.02] transition-all duration-300">
 
         <h2 className="text-3xl font-bold text-green-500">
-          4
+          {Math.floor(stats.words / 100)}
         </h2>
 
         <p className="text-gray-400 mt-2">
