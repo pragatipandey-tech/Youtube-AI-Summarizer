@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { fetchTranscript } from "../services/api"
 
-function UrlInput({setTranscript,setSummary,setNotes,setQuiz,setStats,setLoading,setShowResults,loading}) {
+function UrlInput({setTranscript,setSummary,setNotes,setQuiz,setStats,setLoading,setShowResults,setThumbnail,loading}) {
 
   const [url, setUrl] = useState("")
 
@@ -16,7 +16,19 @@ function UrlInput({setTranscript,setSummary,setNotes,setQuiz,setStats,setLoading
 
     try {
 
-      const videoId = url.split("v=")[1]
+      let videoId = ""
+
+      if (url.includes("v=")) {
+        videoId = url.split("v=")[1].split("&")[0]
+      }
+
+      else if (url.includes("youtu.be/")) {
+        videoId = url.split("youtu.be/")[1]
+      }
+
+      setThumbnail(
+       `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
+      )
 
       const data = await fetchTranscript(videoId)
 
