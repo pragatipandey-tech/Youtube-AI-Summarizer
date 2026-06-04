@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { fetchTranscript } from "../services/api"
 
-function UrlInput({setTranscript,setSummary,setNotes,setQuiz,setStats,setLoading,setShowResults,setThumbnail,loading}) {
+function UrlInput({setTranscript,setSummary,setNotes,setQuiz,setStats,setLoading,setShowResults,setThumbnail,setError,loading}) {
 
   const [url, setUrl] = useState("")
 
@@ -15,6 +15,7 @@ function UrlInput({setTranscript,setSummary,setNotes,setQuiz,setStats,setLoading
     setLoading(true)
 
     try {
+      setError("")
 
       let videoId = ""
 
@@ -49,7 +50,7 @@ function UrlInput({setTranscript,setSummary,setNotes,setQuiz,setStats,setLoading
 
     } catch (error) {
 
-      console.log(error)
+      setError("Failed to fetch transcript.")
 
     }
 

@@ -21,6 +21,8 @@ function App() {
 
   const [thumbnail, setThumbnail] = useState("")
 
+  const [error, setError] = useState("")
+
   const [summary, setSummary] = useState("")
   const [notes, setNotes] = useState([])
   const [quiz, setQuiz] = useState([])
@@ -85,6 +87,7 @@ function App() {
           setLoading={setLoading}
           setShowResults={setShowResults}
           setThumbnail={setThumbnail}
+          setError={setError}
           loading={loading}
         />
 
