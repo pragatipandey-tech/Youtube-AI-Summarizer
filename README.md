@@ -309,7 +309,7 @@ http://127.0.0.1:8000/docs
 
 Created by Pragati Pandey
 
-GitHub Repository:
+GitHub Repository:-
 
 https://github.com/pragatipandey-tech/Youtube-AI-Summarizer
 
