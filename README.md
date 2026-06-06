@@ -2,7 +2,7 @@
 
 An AI-powered full-stack web application that extracts YouTube video transcripts and generates smart summaries, notes, timestamps, and quiz questions.
 
-Built using:-
+Built using:
 
 * React + Vite
 * Tailwind CSS
