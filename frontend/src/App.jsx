@@ -146,8 +146,16 @@ function App() {
               </div>
 
               <p className="text-gray-300 leading-7">
-                {transcript.slice(0, 500)}...
-              </p>
+                {
+                 transcript.length > 700
+                   ? transcript.slice(0, 700) + "..."
+                   : transcript
+               }
+             </p>
+
+             <p className="text-gray-500 text-sm mt-4">
+                Preview limited to 700 characters
+             </p>
 
               <div className="mt-4 flex flex-wrap gap-4 text-sm text-gray-400">
 
