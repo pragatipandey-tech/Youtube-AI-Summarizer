@@ -26,9 +26,15 @@ def get_transcript(video_id: str):
 
         transcript_list = api.fetch(video_id)
 
-        transcript = " ".join(
-            [item.text for item in transcript_list]
+        transcript_text = " ".join(
+          [item["text"] for item in transcript]
         )
+
+        transcript_text = transcript_text.replace("\n", " ")
+
+        transcript_text = transcript_text.replace("♪", "")
+
+        transcript_text = transcript_text.strip()
 
         return {
          "video_id": video_id,
