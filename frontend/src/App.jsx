@@ -23,6 +23,8 @@ function App() {
 
   const [error, setError] = useState("")
 
+  const [copied, setCopied] = useState(false)
+
   const [summary, setSummary] = useState("")
   const [notes, setNotes] = useState([])
   const [quiz, setQuiz] = useState([])
@@ -151,10 +153,24 @@ function App() {
                 </h2>
 
                 <button
-                  onClick={() => navigator.clipboard.writeText(transcript)}
+
+                  onClick={() => {
+
+                    navigator.clipboard.writeText(transcript)
+
+                    setCopied(true)
+
+                    setTimeout(() => {
+                      setCopied(false)
+                    }, 2000)
+
+                  }}
+
                   className="bg-zinc-800 hover:bg-zinc-700 px-4 py-2 rounded-lg text-sm"
                 >
-                  Copy Transcript
+
+                  {copied ? "Copied!" : "Copy Transcript"}
+
                 </button>
 
               </div>
