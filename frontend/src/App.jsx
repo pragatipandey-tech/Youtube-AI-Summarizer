@@ -77,6 +77,10 @@ function App() {
           AI YouTube Summarizer
         </h1>
 
+        <div className="mb-6 px-4 py-2 rounded-full bg-red-500/10 border border-red-500 text-red-400 text-sm">
+          Powered by AI Transcript Intelligence
+        </div>
+
         <p className="text-gray-400 mb-8 text-center max-w-xl">
           Paste a YouTube link and get AI-generated summaries,
           notes, timestamps and quiz questions instantly.
