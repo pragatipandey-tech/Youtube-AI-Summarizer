@@ -102,6 +102,16 @@ function App() {
 
         {loading && <Loader />}
 
+        {error && (
+
+          <div className="mt-6 bg-red-500/10 border border-red-500 text-red-400 px-6 py-4 rounded-2xl max-w-2xl w-full text-center">
+
+            {error}
+
+          </div>
+
+        )}
+
         {!showResults && !loading && (
           <p className="mt-10 text-gray-500 text-center">
             Paste a YouTube link and generate AI insights instantly.
