@@ -82,8 +82,13 @@ function App() {
         </div>
 
         <p className="text-gray-400 mb-8 text-center max-w-xl">
-          Paste a YouTube link and get AI-generated summaries,
-          notes, timestamps and quiz questions instantly.
+          Paste a YouTube video URL to generate:
+
+          • AI Summary  
+          • Smart Notes  
+          • Quiz Questions  
+          • Transcript Analysis  
+          • AI Statistics
         </p>
 
         <UrlInput
