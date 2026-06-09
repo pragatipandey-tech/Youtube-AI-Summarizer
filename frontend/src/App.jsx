@@ -141,7 +141,7 @@ function App() {
             <img
               src={thumbnail}
               alt="YouTube Thumbnail"
-              className="mt-10 w-full max-w-3xl rounded-2xl border border-zinc-800"
+              className="mt-10 w-full max-w-3xl rounded-2xl border border-zinc-800 shadow-2xl hover:scale-[1.01] transition-all duration-300"
            />
 
            <div className="mt-4 bg-white/5 border border-zinc-800 rounded-xl px-4 py-3 text-gray-400 max-w-3xl w-full">
