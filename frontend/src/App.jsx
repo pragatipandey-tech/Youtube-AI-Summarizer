@@ -25,6 +25,8 @@ function App() {
 
   const [copied, setCopied] = useState(false)
 
+  const [showFullTranscript, setShowFullTranscript] = useState(false)
+
   const [summary, setSummary] = useState("")
   const [notes, setNotes] = useState([])
   const [quiz, setQuiz] = useState([])
@@ -185,12 +187,14 @@ function App() {
               </div>
 
               <p className="text-gray-300 leading-7">
+
                 {
-                 transcript.length > 700
-                   ? transcript.slice(0, 700) + "..."
-                   : transcript
-               }
-             </p>
+                  showFullTranscript
+                   ? transcript
+                   : transcript.slice(0, 700) + "..."
+                }
+
+              </p>
 
              <p className="text-gray-500 text-sm mt-4">
                 Preview limited to 700 characters
