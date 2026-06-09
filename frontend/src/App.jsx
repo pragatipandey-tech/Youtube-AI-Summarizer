@@ -125,10 +125,33 @@ function App() {
 
         )}
 
-        {!showResults && !loading && (
-          <p className="mt-10 text-gray-500 text-center">
-            Paste a YouTube link and generate AI insights instantly.
-          </p>
+       {!showResults && !loading && (
+          <div className="mt-10 flex flex-col items-center text-center">
+
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ repeat: Infinity, duration: 2 }}
+              className="text-6xl mb-6"
+            >
+      
+            </motion.div>
+
+            <p className="text-gray-500 leading-8">
+
+             Paste a YouTube video URL to generate:
+
+              <br /><br />
+
+              • AI Summary <br />
+              • Smart Notes <br />
+              • Quiz Questions <br />
+              • Transcript Analysis <br />
+              • AI Statistics
+
+            </p>
+
+            </div>
+
         )}
 
         {showResults && (
