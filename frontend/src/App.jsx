@@ -68,6 +68,16 @@ function App() {
     <>
       <Navbar />
 
+      <div className="w-full flex justify-center mb-6">
+
+        <div className="bg-green-500/10 border border-green-500 text-green-400 px-4 py-2 rounded-full text-sm">
+
+         Backend Connected Successfully
+
+        </div>
+
+      </div>
+
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
