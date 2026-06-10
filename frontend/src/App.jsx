@@ -25,6 +25,8 @@ function App() {
 
   const [copied, setCopied] = useState(false)
 
+  const [processingTime, setProcessingTime] = useState(0)
+
   const [showFullTranscript, setShowFullTranscript] = useState(false)
 
   const [summary, setSummary] = useState("")
@@ -131,6 +133,7 @@ function App() {
           setThumbnail={setThumbnail}
           setError={setError}
           loading={loading}
+          setProcessingTime={setProcessingTime}
         />
 
         <button
@@ -199,6 +202,10 @@ function App() {
            </div>
 
             <StatsCard stats={stats} />
+
+            <p className="mt-4 text-gray-400">
+              Processing Time: {processingTime}s
+            </p>
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}

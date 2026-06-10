@@ -31,7 +31,15 @@ function UrlInput({setTranscript,setSummary,setNotes,setQuiz,setStats,setLoading
        `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
       )
 
+      const start = Date.now()
+
       const data = await fetchTranscript(videoId)
+
+      const end = Date.now()
+
+      setProcessingTime(
+        ((end - start) / 1000).toFixed(2)
+      )
 
       setTranscript(data.transcript)
 
