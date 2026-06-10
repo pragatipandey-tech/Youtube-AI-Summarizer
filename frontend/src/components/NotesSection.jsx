@@ -18,9 +18,13 @@ function NotesSection({ notes }) {
 
         <h2 className="text-2xl font-bold">
           Smart Notes
-        </h2>
+       </h2>
 
       </div>
+
+      <p className="text-gray-400 mb-4">
+        Total Notes: {notes.length}
+      </p>
 
       <ul className="list-disc pl-6 text-gray-300 space-y-2">
 
