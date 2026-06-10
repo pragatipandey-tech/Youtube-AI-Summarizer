@@ -18,17 +18,21 @@ function QuizCard({ quiz }) {
 
         <h2 className="text-2xl font-bold">
           Quiz Questions
-        </h2>
+       </h2>
 
       </div>
+
+      <p className="text-gray-400 mb-4">
+        Total Questions: {quiz.length}
+      </p>
 
       <div className="space-y-4 text-gray-300">
 
         {
           quiz.map((question, index) => (
-            <p key={index}>
-              {index + 1}. {question}
-            </p>
+           <p key={index}>
+             {index + 1}. {question}
+           </p>
           ))
         }
 
