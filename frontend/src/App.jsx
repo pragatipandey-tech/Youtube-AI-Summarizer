@@ -87,12 +87,16 @@ function App() {
     <>
       <Navbar />
 
-      <div className="w-full flex justify-center mb-6">
+      <div className="w-full flex flex-col items-center mb-6">
 
-        <div className="bg-green-500/10 border border-green-500 text-green-400 px-4 py-2 rounded-full text-sm">
+       <div className="bg-green-500/10 border border-green-500 text-green-400 px-4 py-2 rounded-full text-sm">
 
-         Backend Connected Successfully
+          Backend Connected Successfully
 
+        </div>
+
+        <div className="mt-2 text-xs text-gray-500">
+          Version 0.3.0 Beta
         </div>
 
       </div>
