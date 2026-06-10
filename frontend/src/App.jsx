@@ -51,6 +51,23 @@ function App() {
   setError("")
   }
 
+  const downloadTranscript = () => {
+
+     const element = document.createElement("a")
+
+     const file = new Blob([transcript], {
+       type: "text/plain"
+      })
+
+      element.href = URL.createObjectURL(file)
+
+      element.download = "transcript.txt"
+
+      document.body.appendChild(element)
+
+      element.click()
+    }
+
   useEffect(() => {
 
     if (transcript) {
@@ -215,6 +232,13 @@ function App() {
 
                   {copied ? "Copied!" : "Copy Transcript"}
 
+                </button>
+
+                <button
+                  onClick={downloadTranscript}
+                  className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm ml-2"
+                >
+                  Download
                 </button>
 
               </div>
