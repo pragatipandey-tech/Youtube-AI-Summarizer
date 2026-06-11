@@ -50,6 +50,8 @@ function App() {
 
   setStats({})
 
+  setProcessingTime(0)
+
   setThumbnail("")
 
   setError("")
