@@ -29,9 +29,13 @@ function NotesSection({ notes }) {
       <ul className="list-disc pl-6 text-gray-300 space-y-2">
 
         {
-          notes.map((note, index) => (
-            <li key={index}>{note}</li>
-          ))
+          notes.length > 0 ? (
+            notes.map((note, index) => (
+              <li key={index}>{note}</li>
+            ))
+          ) : (
+           <p>No notes generated yet.</p>
+          )
         }
 
       </ul>
