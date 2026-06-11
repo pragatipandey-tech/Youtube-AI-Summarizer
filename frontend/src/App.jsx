@@ -25,6 +25,8 @@ function App() {
 
   const [copied, setCopied] = useState(false)
 
+  const [showFullTranscript, setShowFullTranscript] = useState(false)
+
   const [processingTime, setProcessingTime] = useState(0)
 
   const [showFullTranscript, setShowFullTranscript] = useState(false)
@@ -263,6 +265,13 @@ function App() {
                 }
 
               </p>
+
+              <button
+                onClick={() => setShowFullTranscript(!showFullTranscript)}
+                className="mt-4 bg-zinc-800 hover:bg-zinc-700 px-4 py-2 rounded-lg"
+              >
+                {showFullTranscript ? "Show Less" : "Show Full Transcript"}
+              </button>
 
              <p className="text-gray-500 text-sm mt-4">
                 Preview limited to 700 characters
