@@ -29,11 +29,15 @@ function QuizCard({ quiz }) {
       <div className="space-y-4 text-gray-300">
 
         {
-          quiz.map((question, index) => (
-           <p key={index}>
-             {index + 1}. {question}
-           </p>
-          ))
+          quiz.length > 0 ? (
+            quiz.map((question, index) => (
+              <p key={index}>
+                {index + 1}. {question}
+              </p>
+            ))
+          ) : (
+            <p>No quiz generated yet.</p>
+          )
         }
 
       </div>
