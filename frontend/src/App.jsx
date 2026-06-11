@@ -209,6 +209,10 @@ function App() {
               Video successfully processed by AI backend
            </div>
 
+           <h2 className="mt-10 text-3xl font-bold">
+              AI Analysis Results
+           </h2>
+
             <StatsCard stats={stats} />
 
             <p className="mt-4 text-gray-400">
