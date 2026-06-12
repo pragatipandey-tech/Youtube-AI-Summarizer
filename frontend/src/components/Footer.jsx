@@ -10,7 +10,17 @@ function Footer() {
       className="w-full text-center py-6 text-gray-500 border-t border-zinc-800 mt-20"
     >
 
-      Built with React, Tailwind and AI
+      <div>
+
+        <p>
+          Built with React, Tailwind and AI
+        </p>
+
+        <p className="text-gray-500 text-sm mt-2">
+          Powered by React + FastAPI + AI
+        </p>
+
+      </div>
 
     </motion.footer>
 
