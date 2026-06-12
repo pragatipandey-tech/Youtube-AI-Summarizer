@@ -157,7 +157,14 @@ function App() {
 
           <div className="mt-6 bg-red-500/10 border border-red-500 text-red-400 px-6 py-4 rounded-2xl max-w-2xl w-full text-center">
 
-            {error}
+            <p>{error}</p>
+
+            <button
+              onClick={() => setError("")}
+              className="mt-3 bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg"
+            >
+              Dismiss
+            </button>
 
           </div>
 
