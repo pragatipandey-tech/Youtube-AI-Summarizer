@@ -80,8 +80,9 @@ function UrlInput({setTranscript,setSummary,setNotes,setQuiz,setStats,setLoading
         />
 
         <button
+          disabled={loading}
           onClick={handleClick}
-          className="bg-red-600 hover:bg-red-700 px-6 rounded-xl font-semibold transition-all duration-300"
+          className="bg-red-600 hover:bg-red-700 disabled:bg-zinc-700 px-6 rounded-xl font-semibold"
         >
           {loading ? "Fetching Transcript..." : "Summarize"}
         </button>
