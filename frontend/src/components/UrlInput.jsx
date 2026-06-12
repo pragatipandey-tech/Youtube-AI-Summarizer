@@ -100,7 +100,11 @@ function UrlInput({setTranscript,setSummary,setNotes,setQuiz,setStats,setLoading
       )}
 
       <p className="text-gray-500 text-sm mt-2">
-        Characters: {url.length}
+
+        URL Length: {url.length}
+
+        {url.length > 0 && " characters"}
+
       </p>
 
     </div>
