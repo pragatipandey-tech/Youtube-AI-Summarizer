@@ -2,6 +2,9 @@ import { NotebookPen } from "lucide-react"
 import { motion } from "framer-motion"
 
 function NotesSection({ notes }) {
+
+  const [copied, setCopied] = useState(false)
+  
   return (
 
     <motion.div
@@ -12,13 +15,37 @@ function NotesSection({ notes }) {
       className="mt-10 w-full max-w-3xl bg-white/5 backdrop-blur-lg p-6 rounded-2xl border border-zinc-800 hover:scale-[1.02] hover:border-red-500/40 transition-all duration-300"
     >
 
-      <div className="flex items-center gap-2 mb-4">
+      <div className="flex justify-between items-center mb-4">
 
-        <NotebookPen size={28} />
+        <div className="flex items-center gap-2">
 
-        <h2 className="text-2xl font-bold">
-          Smart Notes
-       </h2>
+          <NotebookPen size={28} />
+
+          <h2 className="text-2xl font-bold">
+            Smart Notes
+          </h2>
+
+        </div>
+
+        <button
+          onClick={() => {
+
+            navigator.clipboard.writeText(notes.join("\n"))
+
+            setCopied(true)
+
+            setTimeout(() => {
+              setCopied(false)
+            }, 2000)
+
+          }}
+
+          className="bg-zinc-800 hover:bg-zinc-700 px-4 py-2 rounded-lg text-sm"
+        >
+
+          {copied ? "Copied!" : "Copy Notes"}
+
+        </button>
 
       </div>
 
