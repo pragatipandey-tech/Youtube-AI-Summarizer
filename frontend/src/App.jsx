@@ -265,10 +265,29 @@ function App() {
                 </button>
 
                 <button
-                  onClick={downloadTranscript}
-                  className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm ml-2"
+                  onClick={() => {
+
+                   const element = document.createElement("a")
+
+                   const file = new Blob([transcript], {
+                     type: "text/plain"
+                    })
+
+                   element.href = URL.createObjectURL(file)
+
+                   element.download = "transcript.txt"
+
+                   document.body.appendChild(element)
+
+                   element.click()
+
+                  }}
+
+                  className="ml-3 bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm"
                 >
+
                   Download
+
                 </button>
 
               </div>
