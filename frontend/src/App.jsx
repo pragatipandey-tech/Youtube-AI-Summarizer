@@ -130,6 +130,10 @@ function App() {
           • AI Statistics
         </p>
 
+        <div className="mb-6 text-green-400 text-sm">
+         API Status: Online
+        </div>
+
         <UrlInput
           setTranscript={setTranscript}
           setSummary={setSummary}
