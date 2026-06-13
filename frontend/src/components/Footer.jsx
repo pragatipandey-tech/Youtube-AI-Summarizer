@@ -22,6 +22,13 @@ function Footer() {
 
       </div>
 
+      <p className="text-sm mt-2">
+
+        GitHub:
+        pragatipandey-tech/Youtube-AI-Summarizer
+
+      </p>
+
     </motion.footer>
 
   )
