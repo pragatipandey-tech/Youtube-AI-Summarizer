@@ -52,6 +52,10 @@ function SummaryCard({ summary }) {
         {summary}
       </p>
 
+      <p className="text-gray-500 text-sm mt-4">
+        Summary Length: {summary.length} characters
+      </p>
+
     </motion.div>
   )
 }
