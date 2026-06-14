@@ -13,8 +13,6 @@ import { useState, useEffect } from "react"
 
 function App() {
 
-  const [showResults, setShowResults] = useState(false)
-
   const [loading, setLoading] = useState(false)
 
   const [transcript, setTranscript] = useState("")
@@ -55,6 +53,10 @@ function App() {
   setThumbnail("")
 
   setError("")
+
+  setCopied(false)
+
+  setShowFullTranscript(false)
   }
 
   const downloadTranscript = () => {
@@ -210,15 +212,24 @@ function App() {
             transition={{ duration: 0.6 }}
             className="w-full flex flex-col items-center"
           >
-            {thumbnail && (
+            {
+              thumbnail ? (
+               <img
+                  src={thumbnail}
+                  alt="YouTube Thumbnail"
+                  className="mt-10 w-full max-w-3xl rounded-2xl border border-zinc-800"
+                />
 
-              <img
-                src={thumbnail}
-                alt="YouTube Thumbnail"
-                className="mt-10 w-full max-w-3xl rounded-2xl border border-zinc-800"
-              />
+              ) : (
 
-            )}
+                <div className="mt-10 w-full max-w-3xl bg-zinc-900 border border-zinc-800 rounded-2xl p-10 text-center text-gray-500">
+
+                  No Thumbnail Available
+
+                </div>
+
+              )
+            }
 
            <div className="mt-4 bg-white/5 border border-zinc-800 rounded-xl px-4 py-3 text-gray-400 max-w-3xl w-full">
               Video successfully processed by AI backend
@@ -239,7 +250,7 @@ function App() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
              className="mt-10 w-full max-w-3xl bg-white/5 backdrop-blur-lg p-6 rounded-2xl border border-zinc-800 hover:scale-[1.01] transition-all duration-300"
-             >
+            >
 
               <div className="flex justify-between items-center mb-4">
 
@@ -269,27 +280,10 @@ function App() {
                 </button>
 
                 <button
-                  onClick={() => {
-
-                   const element = document.createElement("a")
-
-                   const file = new Blob([transcript], {
-                     type: "text/plain"
-                    })
-
-                   element.href = URL.createObjectURL(file)
-
-                   element.download = "transcript.txt"
-
-                   document.body.appendChild(element)
-
-                   element.click()
-
-                  }}
-
+                  
+                  onClick={downloadTranscript}
                   className="ml-3 bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm"
                 >
-
                   Download
 
                 </button>
@@ -328,7 +322,7 @@ function App() {
                </p>
 
                <p>
-                 Preview Length: 500 chars
+                 Preview Length: 700 chars
                </p>
 
               </div>
