@@ -36,7 +36,7 @@ Built using:
 
 ---
 
-## Backend
+## Backend:
 
 * FastAPI backend server
 * REST API architecture
