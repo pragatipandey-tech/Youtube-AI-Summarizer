@@ -24,6 +24,11 @@ def get_transcript(video_id: str):
 
         transcript_text = fetch_transcript(video_id)
 
+        if not transcript_text:
+           return {
+               "error": "Transcript not available for this video"
+            }
+
         return {
 
             "video_id": video_id,
