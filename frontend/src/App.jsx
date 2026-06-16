@@ -13,6 +13,8 @@ import { useState, useEffect } from "react"
 
 function App() {
 
+  const [showResults, setShowResults] = useState(false)
+
   const [loading, setLoading] = useState(false)
 
   const [transcript, setTranscript] = useState("")
@@ -26,8 +28,6 @@ function App() {
   const [showFullTranscript, setShowFullTranscript] = useState(false)
 
   const [processingTime, setProcessingTime] = useState(0)
-
-  const [showFullTranscript, setShowFullTranscript] = useState(false)
 
   const [summary, setSummary] = useState("")
   const [notes, setNotes] = useState([])
