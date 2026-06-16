@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from youtube_transcript_api import YouTubeTranscriptApi
+from services.transcriptService import fetch_transcript
 from utils import (
     generate_summary,
     generate_notes,
@@ -22,19 +22,7 @@ def get_transcript(video_id: str):
 
     try:
 
-        api = YouTubeTranscriptApi()
-
-        transcript_list = api.fetch(video_id)
-
-        transcript_text = " ".join(
-            [item.text for item in transcript_list]
-        )
-
-        transcript_text = transcript_text.replace("\n", " ")
-
-        transcript_text = transcript_text.replace("♪", "")
-
-        transcript_text = transcript_text.strip()
+        transcript_text = fetch_transcript(video_id)
 
         return {
 
