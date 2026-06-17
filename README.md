@@ -242,16 +242,21 @@ http://127.0.0.1:8000/docs
 
 ---
 
-# 🧠 Current Functionalities
+## 🧠 Current Functionalities
 
-✅ Paste YouTube URL
-✅ Extract video transcript
-✅ Display transcript dynamically
-✅ Show transcript statistics
-✅ Copy transcript instantly
-✅ Smooth loading animations
-✅ Real-time frontend-backend communication
-✅ Responsive full-stack dashboard
+- ✅ Paste YouTube URL  
+- ✅ Extract video transcript  
+- ✅ AI Summary generation  
+- ✅ Smart Notes generation  
+- ✅ Quiz generation  
+- ✅ Transcript statistics  
+- ✅ Copy transcript button  
+- ✅ Download transcript (.txt)  
+- ✅ Show Full / Show Less transcript  
+- ✅ Error handling  
+- ✅ Loading animations  
+- ✅ FastAPI backend integration  
+- ✅ React + Tailwind responsive UI
 
 ---
 
