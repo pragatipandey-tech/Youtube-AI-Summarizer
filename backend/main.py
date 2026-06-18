@@ -30,7 +30,10 @@ def get_transcript(video_id: str):
             }
 
         return {
+            "success": True,
 
+            "message": "Transcript fetched successfully",
+            
             "video_id": video_id,
 
             "transcript": transcript_text,
