@@ -359,7 +359,7 @@ Built and maintained by Pragati Pandey
 
 Aspiring Software Engineer | Full Stack Developer | AI Enthusiast
 
-GitHub Repository:-
+GitHub Repository:
 
 https://github.com/pragatipandey-tech/Youtube-AI-Summarizer
 
