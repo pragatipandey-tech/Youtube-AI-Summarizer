@@ -1,8 +1,21 @@
-def generate_summary(text):
+import google.generativeai as genai
+from config import GEMINI_API_KEY
 
-    sentences = text.split(".")
+genai.configure(api_key=GEMINI_API_KEY)
 
-    return ".".join(sentences[:4]) + "."
+model = genai.GenerativeModel("gemini-1.5-flash")
+
+def generate_summary(transcript):
+
+    prompt = f"""
+    Summarize this YouTube transcript clearly:
+
+    {transcript}
+    """
+
+    response = model.generate_content(prompt)
+
+    return response.text
 
 def generate_notes(text):
 
