@@ -17,26 +17,27 @@ def generate_summary(transcript):
 
     return response.text
 
-def generate_notes(text):
+def generate_notes(transcript):
 
-    sentences = text.split(".")
+    prompt = f"""
+    Convert this transcript into short study notes:
 
-    notes = []
+    {transcript}
+    """
 
-    for sentence in sentences[:5]:
+    response = model.generate_content(prompt)
 
-        cleaned = sentence.strip()
-
-        if cleaned:
-            notes.append(cleaned)
-
-    return notes
+    return response.text.split("\n")
 
 
-def generate_quiz(text):
+def generate_quiz(transcript):
 
-    return [
-        "What is the main topic of the video?",
-        "What important concept was explained?",
-        "What did you learn from this video?"
-    ]
+    prompt = f"""
+    Create 5 quiz questions from this transcript:
+
+    {transcript}
+    """
+
+    response = model.generate_content(prompt)
+
+    return response.text.split("\n")
