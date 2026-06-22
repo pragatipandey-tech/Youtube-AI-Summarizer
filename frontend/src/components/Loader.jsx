@@ -17,8 +17,8 @@ function Loader() {
         className="w-14 h-14 border-4 border-red-500 border-t-transparent rounded-full"
       />
 
-      <p className="mt-4 text-gray-400">
-        AI is analyzing the video...
+      <p className="mt-4 text-purple-400 animate-pulse">
+        Gemini AI is analyzing your video...
       </p>
 
     </div>
