@@ -51,9 +51,8 @@ def get_transcript(video_id: str):
             "preview": transcript_text[:300]
 
         }
-
+    
     except Exception as e:
-
-        return {
-            "error": str(e)
+       return {
+         "error": "Unable to fetch transcript. Video may have captions disabled or be unsupported."
         }
