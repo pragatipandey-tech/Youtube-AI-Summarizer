@@ -1,6 +1,6 @@
 # 🎥 AI-Powered YouTube Summarizer & Learning Assistant
 
-An AI-powered full-stack web application that extracts YouTube video transcripts and automatically generates summaries, smart notes, quiz questions, transcript analytics, and downloadable learning resources.
+An AI-powered full-stack web application that extracts youTube video transcripts and automatically generates summaries, smart notes, quiz questions, transcript analytics, and downloadable learning resources.
 
 Built using:
 
