@@ -14,7 +14,7 @@ Built using:
 
 # 🚀 Features
 
-## Frontend:
+## Frontend:-
 
 * Modern responsive UI
 * Premium gradient design
@@ -37,7 +37,7 @@ Built using:
 
 ---
 
-## Backend:
+## Backend:-
 
 * FastAPI backend server
 * REST API architecture
