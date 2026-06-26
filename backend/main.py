@@ -38,6 +38,8 @@ def get_transcript(video_id: str):
 
             "transcript": transcript_text,
 
+            "timestamps": generate_timestamps(transcript_text),
+
             "summary": generate_summary(transcript_text),
 
             "notes": generate_notes(transcript_text),

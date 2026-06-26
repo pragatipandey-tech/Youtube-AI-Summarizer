@@ -41,3 +41,14 @@ def generate_quiz(transcript):
     response = model.generate_content(prompt)
 
     return response.text.split("\n")
+
+def generate_timestamps(transcript):
+
+    timestamps = [
+        "00:00 Introduction",
+        "02:10 Main Topic",
+        "05:30 Key Concepts",
+        "08:00 Summary"
+    ]
+
+    return timestamps
