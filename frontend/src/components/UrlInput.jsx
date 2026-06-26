@@ -1,9 +1,13 @@
 import { useState } from "react"
 import { fetchTranscript } from "../services/api"
 
-function UrlInput({setTranscript,setSummary,setNotes,setQuiz,setStats,setLoading,setShowResults,setThumbnail,setError,loading}) {
+function UrlInput({setTranscript,setSummary,setNotes,setQuiz,setStats,setLoading,setShowResults,setThumbnail,setError,setProcessingTime,setTimestamps,loading}) {
 
   const [url, setUrl] = useState("")
+
+  const [history, setHistory] = useState(
+    JSON.parse(localStorage.getItem("history")) || []
+  )
 
   const handleClick = async () => {
 
@@ -58,6 +62,15 @@ function UrlInput({setTranscript,setSummary,setNotes,setQuiz,setStats,setLoading
 
       setShowResults(true)
 
+      const updatedHistory = [url, ...history.slice(0, 4)]
+
+        localStorage.setItem(
+         "history",
+        JSON.stringify(updatedHistory)
+      )
+
+      setHistory(updatedHistory)
+
     } catch (error) {
 
       setError("Failed to fetch transcript.")
@@ -108,6 +121,27 @@ function UrlInput({setTranscript,setSummary,setNotes,setQuiz,setStats,setLoading
         {url.length > 0 && " characters"}
 
       </p>
+
+      {history.length > 0 && (
+
+       <div className="mt-4 text-sm text-gray-400">
+         <p className="mb-2 font-semibold">
+           Recent Videos:
+         </p>
+
+         {history.map((item, index) => (
+           <p
+             key={index}
+             className="truncate text-gray-500"
+            >
+             {item}
+            </p>
+
+          ))}
+
+        </div>
+
+      )}
 
     </div>
   )
