@@ -17,6 +17,23 @@ function SummaryCard({ summary }) {
     }, 2000)
   }
 
+  const downloadSummary = () => {
+
+   const element = document.createElement("a")
+
+   const file = new Blob([summary], {
+     type: "text/plain"
+    })
+
+   element.href = URL.createObjectURL(file)
+
+   element.download = "summary.txt"
+
+   document.body.appendChild(element)
+
+   element.click()
+  }
+
   return (
 
     <motion.div
@@ -39,12 +56,23 @@ function SummaryCard({ summary }) {
 
         </div>
 
-        <button
-          onClick={handleCopy}
-          className="bg-zinc-800 hover:bg-zinc-700 px-4 py-2 rounded-lg text-sm transition-all duration-300"
-        >
-          {copied ? "Copied!" : "Copy"}
-        </button>
+        <div className="flex gap-3">
+
+         <button
+           onClick={handleCopy}
+           className="bg-zinc-800 hover:bg-zinc-700 px-4 py-2 rounded-lg text-sm transition-all duration-300"
+          >
+            {copied ? "Copied!" : "Copy"}
+          </button>
+
+          <button
+            onClick={downloadSummary}
+            className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm transition-all duration-300"
+          >
+            Download
+         </button>
+
+        </div>
 
       </div>
 
