@@ -29,6 +29,8 @@ function App() {
 
   const [processingTime, setProcessingTime] = useState(0)
 
+  const [timestamps, setTimestamps] = useState([])
+
   const [summary, setSummary] = useState("")
   const [notes, setNotes] = useState([])
   const [quiz, setQuiz] = useState([])
@@ -148,6 +150,7 @@ function App() {
           setError={setError}
           loading={loading}
           setProcessingTime={setProcessingTime}
+          setTimestamps={setTimestamps}
         />
 
         <button
@@ -332,7 +335,7 @@ function App() {
 
             <NotesSection notes={notes} />
 
-            <TimestampList />
+            <TimestampList timestamps={timestamps} />
 
             <QuizCard quiz={quiz} />
 

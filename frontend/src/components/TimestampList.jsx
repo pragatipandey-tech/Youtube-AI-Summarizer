@@ -1,7 +1,7 @@
 import { Clock3 } from "lucide-react"
 import { motion } from "framer-motion"
 
-function TimestampList() {
+function TimestampList({ timestamps }) {
   return (
 
     <motion.div
@@ -24,10 +24,21 @@ function TimestampList() {
 
       <div className="space-y-3 text-gray-300">
 
-        <p>00:00 - Introduction to AI</p>
-        <p>02:45 - Machine Learning Basics</p>
-        <p>06:20 - Deep Learning Concepts</p>
-        <p>10:15 - Real-world Applications</p>
+        {
+          timestamps.length > 0 ? (
+
+            timestamps.map((time, index) => (
+              <p key={index}>{time}</p>
+            ))
+
+          ) : (
+
+            <p className="text-gray-500">
+              No timestamps generated yet.
+           </p>
+
+          )
+        }
 
       </div>
 

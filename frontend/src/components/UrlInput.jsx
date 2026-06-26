@@ -49,6 +49,8 @@ function UrlInput({setTranscript,setSummary,setNotes,setQuiz,setStats,setLoading
 
       setQuiz(data.quiz)
 
+      setTimestamps(data.timestamps)
+
       setStats({
         words: data.words,
         characters: data.characters
