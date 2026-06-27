@@ -1,4 +1,4 @@
-const BASE_URL = "https://your-backend-name.onrender.com"
+const BASE_URL = "https://youtube-ai-summarizer-hxia.onrender.com"
 
 export async function fetchTranscript(videoId) {
 
