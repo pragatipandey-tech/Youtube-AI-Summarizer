@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from services.transcriptService import fetch_transcript
+from services.transcript_service import fetch_transcript
 from utils import (
     generate_summary,
     generate_notes,
