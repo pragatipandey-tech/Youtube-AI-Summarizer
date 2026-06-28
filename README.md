@@ -14,7 +14,7 @@ Built using:
 
 # 🚀 Features
 
-## Frontend:-
+## Frontend:
 
 * Modern responsive UI
 * Premium gradient design
