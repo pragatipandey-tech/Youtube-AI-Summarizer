@@ -2,7 +2,7 @@
 
 An AI-powered full-stack web application that extracts youTube video transcripts and automatically generates summaries, smart notes, quiz questions, transcript analytics, and downloadable learning resources.
 
-Built using:
+Built using:-
 
 * React + Vite
 * Tailwind CSS
