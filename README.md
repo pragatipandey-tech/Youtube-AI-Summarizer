@@ -1,57 +1,62 @@
 # 🎥 AI-Powered YouTube Summarizer & Learning Assistant
 
-An AI-powered full-stack web application that extracts youTube video transcripts and automatically generates summaries, smart notes, quiz questions, transcript analytics, and downloadable learning resources.
+An AI-powered full-stack web application that extracts YouTube video transcripts and automatically generates summaries, smart notes, quiz questions, transcript analytics, downloadable transcript files, and a modern interactive learning dashboard.
 
 Built using:
 
-* React + Vite
-* Tailwind CSS
-* Framer Motion
-* FastAPI
-* YouTube Transcript API
+- React + Vite  
+- Tailwind CSS  
+- Framer Motion  
+- FastAPI  
+- YouTube Transcript API  
+- Lucide React Icons  
 
 ---
 
 # 🚀 Features
 
-## Frontend:
+## Frontend
 
-* Modern responsive UI
-* Premium gradient design
-* Glassmorphism cards
-* Framer Motion animations
-* Smooth auto-scroll behavior
-* Dynamic transcript rendering
-* Show Full / Show Less transcript
-* Copy transcript functionality
-* Download transcript as TXT
-* Transcript statistics dashboard
-* Loading animations
-* Error handling alerts
-* Backend connection status indicator
-* Thumbnail preview support
-* AI analysis results section
-* Responsive navbar & footer
-* Animated dashboard cards
-* Processing time display
+- Modern responsive UI design  
+- Premium animated gradient background  
+- Glassmorphism UI cards  
+- Framer Motion smooth animations  
+- YouTube URL validation  
+- Dynamic transcript rendering  
+- Show Full / Show Less transcript  
+- Copy transcript instantly  
+- Download transcript as `.txt` file  
+- Summary download functionality  
+- AI analysis dashboard  
+- Transcript statistics display  
+- Character count and word count  
+- Backend API status indicator  
+- Processing time display  
+- Error handling alert cards  
+- Thumbnail preview support  
+- Recent video history using Local Storage  
+- Responsive navbar and footer  
+- Animated loading states  
 
 ---
 
-## Backend:
+## Backend
 
-* FastAPI backend server
-* REST API architecture
-* YouTube transcript extraction
-* Dynamic JSON API responses
-* AI summary generation
-* Smart notes generation
-* Quiz question generation
-* Transcript preprocessing and cleaning
-* Error handling system
-* Transcript availability validation
-* CORS enabled backend
-* Frontend-backend integration
-* Swagger API documentation
+- FastAPI backend architecture  
+- REST API architecture  
+- YouTube transcript extraction  
+- Transcript cleaning and preprocessing  
+- Summary generation system  
+- Smart notes generation  
+- Quiz generation  
+- JSON API responses  
+- Transcript validation system  
+- Transcript availability checking  
+- Improved backend error handling  
+- Modular service architecture  
+- Swagger API documentation  
+- Frontend-backend integration  
+- CORS enabled backend  
 
 ---
 
@@ -62,30 +67,32 @@ Youtube-AI-Summarizer/
 │
 ├── frontend/
 │   ├── src/
-│   │   ├── components/
-│   │   │   ├── Navbar.jsx
-│   │   │   ├── Footer.jsx
-│   │   │   ├── Loader.jsx
-│   │   │   ├── UrlInput.jsx
-│   │   │   ├── SummaryCard.jsx
-│   │   │   ├── NotesSection.jsx
-│   │   │   ├── TimestampList.jsx
-│   │   │   ├── QuizCard.jsx
-│   │   │   └── StatsCard.jsx
-│   │   │
-│   │   ├── services/
-│   │   │   └── api.js
-│   │   │
-│   │   ├── App.jsx
-│   │   └── main.jsx
 │   │
-│   └── package.json
+│   │── components/
+│   │    ├── Navbar.jsx
+│   │    ├── Footer.jsx
+│   │    ├── Loader.jsx
+│   │    ├── UrlInput.jsx
+│   │    ├── SummaryCard.jsx
+│   │    ├── NotesSection.jsx
+│   │    ├── TimestampList.jsx
+│   │    ├── QuizCard.jsx
+│   │    ├── StatsCard.jsx
+│   │
+│   │── services/
+│   │    └── api.js
+│   │
+│   │── App.jsx
+│   │── main.jsx
 │
 ├── backend/
 │   ├── main.py
+│   ├── config.py
 │   ├── utils.py
+│   ├── requirements.txt
+│   │
 │   └── services/
-│       └── transcriptService.py
+│        └── transcript_service.py
 │
 └── README.md
 ```
@@ -94,25 +101,25 @@ Youtube-AI-Summarizer/
 
 # 🖥 Frontend Setup
 
-## Navigate to frontend
+Navigate to frontend:
 
 ```bash
 cd frontend
 ```
 
-## Install dependencies
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-## Start development server
+Run frontend:
 
 ```bash
 npm run dev
 ```
 
-Frontend runs on:
+Runs on:
 
 ```bash
 http://localhost:5173
@@ -122,25 +129,31 @@ http://localhost:5173
 
 # ⚙ Backend Setup
 
-## Navigate to backend
+Navigate to backend:
 
 ```bash
 cd backend
 ```
 
-## Install dependencies
+Install dependencies:
 
 ```bash
-py -m pip install fastapi uvicorn youtube-transcript-api python-dotenv
+pip install -r requirements.txt
 ```
 
-## Run backend server
+Or manually:
 
 ```bash
-py -m uvicorn main:app --reload
+pip install fastapi uvicorn youtube-transcript-api python-dotenv
 ```
 
-Backend runs on:
+Run backend server:
+
+```bash
+uvicorn main:app --reload
+```
+
+Runs on:
 
 ```bash
 http://127.0.0.1:8000
@@ -150,7 +163,7 @@ http://127.0.0.1:8000
 
 # 🔄 Running Full Stack Together
 
-## Terminal 1 — Frontend
+### Terminal 1 → Frontend
 
 ```bash
 cd frontend
@@ -165,11 +178,11 @@ http://localhost:5173
 
 ---
 
-## Terminal 2 — Backend
+### Terminal 2 → Backend
 
 ```bash
 cd backend
-py -m uvicorn main:app --reload
+uvicorn main:app --reload
 ```
 
 Runs on:
@@ -198,7 +211,7 @@ Response:
 
 ---
 
-## Transcript Extraction Route
+## Transcript Route
 
 ```http
 GET /transcript?video_id=VIDEO_ID
@@ -216,12 +229,12 @@ Response:
 {
   "video_id": "jNQXAC9IVRw",
   "transcript": "Transcript text...",
-  "summary": "AI generated summary",
+  "summary": "Generated summary...",
   "notes": ["Point 1", "Point 2"],
   "quiz": ["Question 1", "Question 2"],
-  "characters": 2500,
-  "words": 450,
-  "preview": "First 300 characters..."
+  "characters": 2300,
+  "words": 420,
+  "preview": "Transcript preview..."
 }
 ```
 
@@ -229,7 +242,7 @@ Response:
 
 # 📘 Swagger API Documentation
 
-FastAPI automatically generates interactive API docs.
+FastAPI automatically generates interactive API documentation.
 
 Open:
 
@@ -241,57 +254,60 @@ http://127.0.0.1:8000/docs
 
 # 🎨 UI Highlights
 
-* Framer Motion animations
-* Premium gradient landing page
-* Glassmorphism transcript cards
-* Responsive dashboard layout
-* Hover animations
-* AI-style loading states
-* Transcript statistics section
-* Copy transcript button
-* Download transcript feature
-* Show Full / Show Less transcript
-* Dynamic transcript rendering
-* Animated footer and navbar
-* Processing time tracking
+- Premium animated gradient design  
+- Glassmorphism cards  
+- Framer Motion animations  
+- Smooth auto-scroll behavior  
+- Dynamic transcript rendering  
+- Responsive dashboard layout  
+- Loading animations  
+- Transcript statistics cards  
+- AI analysis result section  
+- Copy transcript functionality  
+- Download transcript feature  
+- Processing time tracking  
+- Responsive mobile-friendly design  
 
 ---
 
 # 🧠 Current Functionalities
 
-* ✅ Paste YouTube URL
-* ✅ Extract video transcript
-* ✅ Dynamic transcript rendering
-* ✅ AI Summary generation
-* ✅ Smart Notes generation
-* ✅ Quiz generation
-* ✅ Transcript statistics
-* ✅ Character count
-* ✅ Word count
-* ✅ Copy transcript button
-* ✅ Download transcript (.txt)
-* ✅ Show Full / Show Less transcript
-* ✅ Error handling
-* ✅ Loading animations
-* ✅ Backend connection status
-* ✅ FastAPI backend integration
-* ✅ React + Tailwind responsive UI
+- ✅ Paste YouTube video URL  
+- ✅ Extract YouTube transcript  
+- ✅ Dynamic transcript rendering  
+- ✅ AI summary generation  
+- ✅ Smart notes generation  
+- ✅ Quiz generation  
+- ✅ Transcript statistics  
+- ✅ Character count  
+- ✅ Word count  
+- ✅ Copy transcript feature  
+- ✅ Download transcript (.txt)  
+- ✅ Summary download functionality  
+- ✅ Show Full / Show Less transcript  
+- ✅ Recent video history storage  
+- ✅ Backend connection indicator  
+- ✅ Error handling system  
+- ✅ Loading animations  
+- ✅ FastAPI backend integration  
+- ✅ Responsive React + Tailwind UI  
 
 ---
 
 # 🚀 Upcoming Features
 
-* Gemini/OpenAI API integration
-* Real AI-powered summarization
-* Dynamic timestamp extraction
-* Export notes as PDF
-* Export quiz as PDF
-* Video sentiment analysis
-* Multi-language transcript support
-* Authentication system
-* Database integration
-* Deployment on Vercel + Render
-* User history dashboard
+- Gemini API integration  
+- OpenAI API integration  
+- Real AI-powered summarization  
+- Dynamic timestamp extraction  
+- Export notes as PDF  
+- Export quiz as PDF  
+- Multi-language transcript support  
+- Authentication system  
+- Database integration  
+- User dashboard  
+- Video sentiment analysis  
+- Personalized learning recommendations  
 
 ---
 
@@ -299,68 +315,64 @@ http://127.0.0.1:8000/docs
 
 ## Frontend
 
-* React.js
-* Vite
-* Tailwind CSS
-* Framer Motion
-* Lucide React Icons
+- React.js  
+- Vite  
+- Tailwind CSS  
+- Framer Motion  
+- Lucide React Icons  
 
 ---
 
 ## Backend
 
-* Python
-* FastAPI
-* Uvicorn
-* YouTube Transcript API
-
----
-
-## APIs & Services
-
-* REST API
-* JSON API Architecture
+- Python  
+- FastAPI  
+- Uvicorn  
+- YouTube Transcript API  
 
 ---
 
 ## Development Tools
 
-* Git
-* GitHub
-* VS Code
+- Git  
+- GitHub  
+- VS Code  
+- Postman  
+
+---
+
+# 🌐 Deployment
+
+### Frontend Deployment
+
+- Vercel
+
+### Backend Deployment
+
+- Render *(currently configuring)*
 
 ---
 
 # 📌 Current Status
 
-* ✅ Full-stack architecture completed
-* ✅ React frontend completed
-* ✅ FastAPI backend completed
-* ✅ Transcript extraction working
-* ✅ Dynamic transcript rendering completed
-* ✅ AI summary generation working
-* ✅ Smart notes generation working
-* ✅ Quiz generation working
-* ✅ Transcript analytics implemented
-* ✅ Copy transcript feature working
-* ✅ Download transcript feature working
-* ✅ Show Full / Show Less transcript working
-* ✅ Error handling system implemented
-* ✅ Loading animations completed
-* ✅ Frontend-backend integration completed
-* 🚧 Gemini/OpenAI integration planned
-* 🚧 Deployment pending
+- ✅ Full-stack architecture completed  
+- ✅ Frontend UI completed  
+- ✅ FastAPI backend completed  
+- ✅ Transcript extraction working locally  
+- ✅ Summary generation working  
+- ✅ Smart notes generation working  
+- ✅ Quiz generation working  
+- ✅ Transcript analytics implemented  
+- ✅ Copy transcript feature working  
+- ✅ Download transcript feature working  
+- ✅ Summary download working  
+- ✅ Recent video history implemented  
+- ✅ Backend service refactoring completed  
+- ✅ Improved backend error handling added  
+- ✅ Premium UI redesign completed  
+- ✅ Frontend deployed on Vercel  
+- 🚧 Backend deployment on Render in progress  
+- 🚧 Gemini/OpenAI integration planned  
 
 ---
-
-# 👩‍💻 Developer
-
-Built and maintained by Pragati Pandey
-
-Aspiring Software Engineer | Full Stack Developer | AI Enthusiast
-
-GitHub Repository:
-
-https://github.com/pragatipandey-tech/Youtube-AI-Summarizer
-
 
