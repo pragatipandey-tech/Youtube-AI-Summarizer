@@ -376,3 +376,15 @@ http://127.0.0.1:8000/docs
 
 ---
 
+# 👩‍💻 Developer
+
+**Built by Pragati Pandey**
+
+- Aspiring Software Engineer  
+- Full Stack Developer  
+- AI Enthusiast  
+
+GitHub Repository:
+
+https://github.com/pragatipandey-tech/Youtube-AI-Summarizer
+
