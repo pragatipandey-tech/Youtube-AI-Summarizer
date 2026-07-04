@@ -3,7 +3,8 @@ from services.transcript_service import fetch_transcript
 from utils import (
     generate_summary,
     generate_notes,
-    generate_quiz
+    generate_quiz,
+    generate_timestamps
 )
 
 app = FastAPI()
