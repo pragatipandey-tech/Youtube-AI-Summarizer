@@ -19,4 +19,5 @@ def fetch_transcript(video_id):
         return transcript_text
 
     except Exception as e:
-      return str(e)
+      print(f"Transcript Error: {e}")
+      raise
