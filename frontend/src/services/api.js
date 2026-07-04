@@ -1,6 +1,5 @@
 const BASE_URL = "https://youtube-ai-summarizer-hxia.onrender.com"
 
-
 export async function fetchTranscript(videoId) {
 
   const response = await fetch(
