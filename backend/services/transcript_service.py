@@ -18,5 +18,5 @@ def fetch_transcript(video_id):
 
         return transcript_text
 
-    except Exception:
-        return None
+    except Exception as e:
+      return str(e)
